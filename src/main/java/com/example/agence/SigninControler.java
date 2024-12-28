@@ -1,11 +1,13 @@
 package com.example.agence;
 
 
+import com.example.agence.handelers.sign_in.action;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
     public class SigninControler {
 
@@ -22,18 +24,13 @@ import javafx.scene.control.TextField;
 
         @FXML
     public void initialize() {
-        gmailField.setText("hihihihihihihihhi");
-        System.out.println("######################################");
-        signinBtn.setOnAction(event -> handleSignin());
-    }
-
-    private void handleSignin() {
-        String username = gmailField.getText();
-        String passwd = password.getText();
-
-        System.out.println("Username: " + username);
-        System.out.println("Password: " + passwd);
-        // Add signup logic here
+        signinBtn.setOnAction(event -> {
+            System.out.println("###################sign in###################");
+            action ac = new action();
+            ac.sing_in(gmailField,password);
+            Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            //currentStage.close();
+        });
     }
 
     }

@@ -10,6 +10,8 @@ module com.example.agence {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.sql;
+    requires java.desktop;
 
     opens com.example.agence to javafx.fxml;
     exports com.example.agence;
