@@ -1,0 +1,63 @@
+.background {
+    -fx-background-color: #ffffff;
+}
+
+.container {
+    -fx-background-color: #f2feef;
+    -fx-background-radius: 25;
+}
+
+
+.text-field {
+    -fx-border-color: #ccc;
+    -fx-border-radius: 25;
+    -fx-background-radius: 25;
+    -fx-text-fill: #1b9476;
+    -fx-font-size: 18px;
+}
+
+.text-field:hover {
+    -fx-border-color: #1b9476;
+}
+
+.text-field:focused {
+    -fx-border-color: #1b9476;
+    -fx-background-color: #ffffff;
+}
+
+.button {
+    -fx-background-color: #1b9476;
+    -fx-text-fill: white;
+    -fx-background-radius :25;
+}
+
+.button:hover {
+    -fx-background-color: #f2feef;
+    -fx-text-fill: #1b9476;
+    -fx-border-color: #1b9476;
+    -fx-border-radius :25;
+}
+.createacc{
+    -fx-background-color:#f2feef;
+    -fx-background-radius :35 35 0 0;
+}
+.sign{
+    -fx-background-color:#f5f5f5;
+    -fx-background-radius :35 35 0 0;
+}
+.backgroundcreatesign{
+    -fx-background-color:#ffffff;
+}
+
+.buttonCANCEL {
+    -fx-background-color: #ff5757;
+    -fx-text-fill: white;
+    -fx-background-radius :25;
+}
+
+.buttonCANCEL:hover {
+    -fx-background-color: #f2feef;
+    -fx-text-fill: #ff5757;
+    -fx-border-color: #ff5757;
+    -fx-border-radius :25;
+}
