@@ -38,10 +38,10 @@ public class SignupController {
         singUp_action ac = new singUp_action();
         signupBtn.setOnAction(event -> {
             System.out.println("######################################");
-            ac.signUp(name, gmailField, phone, passwordField);
+            ac.signUp(name, gmailField, phone, passwordField, event);
             // Get the current stage and close it
-            Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            currentStage.close();
+            //Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            //currentStage.close();
         });
         
         alreadylink.setOnAction(event -> {

@@ -12,6 +12,7 @@ module com.example.agence {
     requires com.almasb.fxgl.all;
     requires java.sql;
     requires java.desktop;
+    requires javafx.base;
 
     opens com.example.agence to javafx.fxml;
     exports com.example.agence;

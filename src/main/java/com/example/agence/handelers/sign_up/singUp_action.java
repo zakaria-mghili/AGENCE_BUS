@@ -4,8 +4,11 @@ package com.example.agence.handelers.sign_up;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
+
 import com.example.agence.Main;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -35,7 +38,7 @@ public class singUp_action {
         return ver;
     }
 
-    public void signUp(TextField name,TextField email,TextField phone,PasswordField passwd){
+    public void signUp(TextField name,TextField email,TextField phone,PasswordField passwd,ActionEvent event){
                 //ResultSet rs = null;
 
                 String nameT = name.getText();
@@ -61,6 +64,10 @@ public class singUp_action {
                                     // Load the FXML file for the new interface
                                     FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("hello-view.fxml"));
                                     Parent root = fxmlLoader.load();
+                                    
+                                    //close current interface
+                                    Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+                                    currentStage.close();
 
                                     // Create a new stage for the new interface
                                     Stage stage = new Stage();
@@ -74,33 +81,39 @@ public class singUp_action {
                                 System.out.println("it is added");
                                 System.out.println("########### match");
                             } else{
-                                //JOptionPane.showMessageDialog(null, "this email already exist");
+                                JOptionPane.showMessageDialog(null, "this email already exist");
                             }
                         }catch (SQLException e1) {
                             System.out.println("Erreur SQL !");
                             e1.printStackTrace();
                         }
                     }else{
-                        //System.out.println(regex.inputsNotValid(email, phone, passwd,form));
-                            /*if (!regex.isEmail(email)) {
-                                form.getErrorLabel().setText("Invalid email format.");
-                                form.getErrorLabel().setVisible(true);
+                            if (!regex.isEmail(email)) {
+                                //form.getErrorLabel().setText("Invalid email format.");
+                                //form.getErrorLabel().setVisible(true);
                                 System.out.println("invalid email");
+                                JOptionPane.showMessageDialog(null, "invalid email");
+
                             }else if (!regex.bigger_8(passwd)) {
-                                form.getErrorLabel().setText("Password must be at least 8 characters.");
-                                form.getErrorLabel().setVisible(true);
+                                //form.getErrorLabel().setText("Password must be at least 8 characters.");
+                                //form.getErrorLabel().setVisible(true);
                                 System.out.println("invalid password");
+                                JOptionPane.showMessageDialog(null, "invalid password");
+
                             }else if (!regex.isNumb(phone)) {
-                                form.getErrorLabel().setText("invalid number phone.");
-                                form.getErrorLabel().setVisible(true);
+                                //form.getErrorLabel().setText("invalid number phone.");
+                                //form.getErrorLabel().setVisible(true);
+                                JOptionPane.showMessageDialog(null, "invalid number phone");
+                                
                             }
                             else{
-                                form.getErrorLabel().setVisible(false);
-                            }*/
-                        
-                    }
+                                //form.getErrorLabel().setVisible(false);
+                            }
+                            
+                        }
                 }else{
                     System.out.println("your input is empty");
+                    JOptionPane.showMessageDialog(null, "your input is empty");
                 }
             }
     

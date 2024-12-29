@@ -27,8 +27,8 @@ import javafx.stage.Stage;
         signinBtn.setOnAction(event -> {
             System.out.println("###################sign in###################");
             action ac = new action();
-            ac.sing_in(gmailField,password);
-            Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            ac.sing_in(gmailField,password, event);
+            //Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             //currentStage.close();
         });
     }
