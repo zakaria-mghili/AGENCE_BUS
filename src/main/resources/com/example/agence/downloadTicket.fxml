@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1215.0" styleClass="background" stylesheets="@../../../Styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="background" stylesheets="@../../../Styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <BorderPane layoutX="204.0" layoutY="75.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
@@ -36,20 +36,20 @@
                 <VBox prefHeight="342.0" prefWidth="815.0" styleClass="container" stylesheets="@../../../Styles/SignUP.css" BorderPane.alignment="CENTER">
                     <children>
                         <HBox prefHeight="46.0" prefWidth="815.0" />
-                        <HBox prefHeight="195.0" prefWidth="815.0">
+                        <HBox prefHeight="172.0" prefWidth="600.0">
                             <children>
-                                <Label prefHeight="162.0" prefWidth="526.0" text="Congratulations on completing your  booking! As &#10;the   final   step,  please   download    your   travel &#10;ticket by clicking the button below. Make sure to &#10;save it securely and have it ready  for   inspection &#10;during your journey. Thank you  for  choosing our &#10;service,    and    we   wish   you   a   pleasant   trip!" textAlignment="JUSTIFY" textFill="#404040">
+                                <Label prefHeight="152.0" prefWidth="469.0" text="Congratulations on completing your  booking! As &#10;the   final   step,  please   download    your   travel &#10;ticket by clicking the button below. Make sure to &#10;save it securely and have it ready  for   inspection &#10;during your journey. Thank you  for  choosing our &#10;service,    and    we   wish   you   a   pleasant   trip!" textAlignment="JUSTIFY" textFill="#404040">
                                     <font>
-                                        <Font name="Montserrat-Regular" size="21.0" />
+                                        <Font name="Montserrat-Regular" size="18.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="150.0" right="50.0" top="13.0" />
+                                        <Insets left="70.0" right="50.0" />
                                     </HBox.margin>
                                 </Label>
                             </children>
                         </HBox>
                         <HBox prefHeight="22.0" prefWidth="815.0" />
-                        <Button fx:id="DownloadBtn" mnemonicParsing="false" prefHeight="46.0" prefWidth="766.0" stylesheets="@../../../Styles/SignUP.css" text="Download your ticket">
+                        <Button fx:id="DownloadBtn" mnemonicParsing="false" prefHeight="39.0" prefWidth="447.0" stylesheets="@../../../Styles/SignUP.css" text="Download your ticket">
                             <font>
                                 <Font name="Montserrat-Regular" size="20.0" />
                             </font>
@@ -57,14 +57,15 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                             <VBox.margin>
-                                <Insets left="25.0" right="25.0" top="1.0" />
+                                <Insets left="70.0" top="1.0" />
                             </VBox.margin>
                         </Button>
+                        <HBox layoutX="10.0" layoutY="224.0" prefHeight="48.0" prefWidth="600.0" />
                     </children>
                 </VBox>
             </center>
             <bottom>
-                <HBox prefHeight="195.0" prefWidth="1215.0" BorderPane.alignment="CENTER" />
+                <HBox prefHeight="172.0" prefWidth="1000.0" BorderPane.alignment="CENTER" />
             </bottom>
         </BorderPane>
     </children>

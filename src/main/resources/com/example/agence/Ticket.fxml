@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="background" stylesheets="@../../../Styles/TICKET.CSS" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <BorderPane layoutX="204.0" layoutY="75.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <HBox prefHeight="180.0" prefWidth="1215.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../Images/GreebLogo.png" />
+                            </image>
+                        </ImageView>
+                  <VBox prefHeight="180.0" prefWidth="716.0" />
+                  <VBox prefHeight="200.0" prefWidth="100.0" />
+                    </children>
+                </HBox>
+            </top>
+            <left>
+                <VBox prefHeight="502.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+            </left>
+            <right>
+                <VBox prefHeight="200.0" prefWidth="200.0" />
+            </right>
+            <center>
+                <VBox prefHeight="342.0" prefWidth="815.0" styleClass="container" stylesheets="@../../../Styles/TICKET.CSS" BorderPane.alignment="CENTER">
+                    <children>
+                        <HBox prefHeight="70.0" prefWidth="600.0">
+                     <children>
+                        <VBox prefHeight="55.0" prefWidth="486.0" />
+                        <VBox prefHeight="200.0" prefWidth="150.0" styleClass="containertop" stylesheets="@../../../Styles/TICKET.CSS" />
+                     </children></HBox>
+                        <HBox prefHeight="172.0" prefWidth="600.0">
+                     <children>
+                        <VBox prefHeight="148.0" prefWidth="486.0">
+                           <children>
+                              <HBox prefHeight="50.0" prefWidth="360.0">
+                                 <children>
+                                    <VBox prefHeight="40.0" prefWidth="131.0">
+                                       <children>
+                                          <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../Images/departpiont.png" />
+                                             </image>
+                                             <VBox.margin>
+                                                <Insets left="42.0" right="15.0" top="10.0" />
+                                             </VBox.margin>
+                                          </ImageView>
+                                       </children></VBox>
+                                    <VBox prefHeight="40.0" prefWidth="321.0">
+                                       <children>
+                                          <Label fx:id="departurevilleticket" prefHeight="23.0" prefWidth="173.0" text="TANGER VILL" textFill="#f2feef">
+                                             <font>
+                                                <Font name="Montserrat-Regular" size="22.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children></VBox>
+                                    <VBox prefHeight="40.0" prefWidth="250.0">
+                                       <children>
+                                          <Label fx:id="datedepartureticket" prefHeight="28.0" prefWidth="90.0" text="06:00" textFill="#f2feef">
+                                             <font>
+                                                <Font name="Montserrat-Regular" size="22.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="50.0" prefWidth="486.0">
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="165.0" />
+                                    <VBox prefHeight="40.0" prefWidth="321.0">
+                                       <children>
+                                          <Label prefHeight="23.0" prefWidth="173.0" text="PASSENGER" textFill="#f2feef">
+                                             <font>
+                                                <Font name="Montserrat-Regular" size="22.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="40.0" prefWidth="250.0">
+                                       <children>
+                                          <Label fx:id="npassengerticket" prefHeight="28.0" prefWidth="54.0" text="2" textFill="#f2feef">
+                                             <font>
+                                                <Font name="Montserrat-Regular" size="22.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children></VBox>
+                                 </children></HBox>
+                              <HBox prefHeight="50.0" prefWidth="486.0">
+                                 <children>
+                                    <VBox prefHeight="40.0" prefWidth="131.0">
+                                       <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../Images/arrivalicon.png" />
+                                             </image>
+                                             <VBox.margin>
+                                                <Insets left="40.0" right="15.0" top="10.0" />
+                                             </VBox.margin>
+                                          </ImageView>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="40.0" prefWidth="321.0">
+                                       <children>
+                                          <Label fx:id="arivalvilleticket" prefHeight="23.0" prefWidth="173.0" text="KENITRA" textFill="#f2feef">
+                                             <font>
+                                                <Font name="Montserrat-Regular" size="22.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="40.0" prefWidth="250.0">
+                                       <children>
+                                          <Label fx:id="datearrivaleticket" prefHeight="28.0" prefWidth="107.0" text="06:50" textFill="#f2feef">
+                                             <font>
+                                                <Font name="Montserrat-Regular" size="22.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children></HBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="150.0" styleClass="containercenter" stylesheets="@../../../Styles/TICKET.CSS">
+                           <children>
+                              <Label fx:id="priceticket" rotate="90.0" text="170 DH" textFill="#ff5757">
+                                 <font>
+                                    <Font name="Montserrat-Regular" size="28.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="18.0" top="60.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children></VBox>
+                     </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="224.0" prefHeight="48.0" prefWidth="600.0">
+                     <children>
+                        <VBox prefHeight="70.0" prefWidth="486.0" />
+                        <VBox prefHeight="42.0" prefWidth="150.0" styleClass="containerdown" stylesheets="@../../../Styles/TICKET.CSS" />
+                     </children></HBox>
+                    </children>
+                </VBox>
+            </center>
+            <bottom>
+                <HBox prefHeight="172.0" prefWidth="1000.0" BorderPane.alignment="CENTER" />
+            </bottom>
+        </BorderPane>
+    </children>
+</AnchorPane>
