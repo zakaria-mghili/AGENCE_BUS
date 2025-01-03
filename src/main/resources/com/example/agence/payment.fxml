@@ -197,7 +197,7 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                        <VBox.margin>
-                                          <Insets left="40.0" />
+                                          <Insets left="40.0" right="25.0" />
                                        </VBox.margin>
                                     </Button>
                                  </children>
@@ -212,7 +212,7 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                        <VBox.margin>
-                                          <Insets left="8.0" right="40.0" />
+                                          <Insets right="40.0" />
                                        </VBox.margin>
                                     </Button>
                                  </children>
