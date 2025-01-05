@@ -13,6 +13,7 @@ module com.example.agence {
     requires java.sql;
     requires java.desktop;
     requires javafx.base;
+    requires javafx.graphics;
 
     opens com.example.agence to javafx.fxml;
     exports com.example.agence;

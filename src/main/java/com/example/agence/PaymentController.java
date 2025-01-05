@@ -35,7 +35,7 @@ public class PaymentController {
     public void paym (){
         validateBtn.setOnAction((actionEvent) -> {
 
-            payment pay = new payment ();
+            payment pay = new payment();
             pay.validateAndSubmit(cardnumField, cardholderField, monthEXP, CVV, null, null);;
 
 

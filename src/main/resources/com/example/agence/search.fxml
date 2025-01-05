@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="background" stylesheets="@../../../Styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agence.SearchController">
+<AnchorPane fx:controller="com.example.agence.SearchController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="background" stylesheets="@../../../Styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <BorderPane layoutX="204.0" layoutY="75.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
@@ -173,7 +173,7 @@
                                                 </HBox>
                                                 <HBox prefHeight="50.0" prefWidth="200.0">
                                                    <children>
-                                                      <TextField fx:id="deparField" prefHeight="42.0" prefWidth="306.0" promptText="My departure date">
+                                                      <TextField fx:id="deparField" prefHeight="42.0" prefWidth="306.0">
                                                          <HBox.margin>
                                                             <Insets left="20.0" right="15.0" top="4.0" />
                                                          </HBox.margin>
@@ -243,7 +243,7 @@
                                                    </children></HBox>
                                                 <HBox prefHeight="50.0" prefWidth="200.0">
                                                    <children>
-                                                      <TextField fx:id="passenger" prefHeight="42.0" prefWidth="306.0" promptText="1">
+                                                      <TextField fx:id="passenger" prefHeight="42.0" prefWidth="306.0">
                                                          <HBox.margin>
                                                             <Insets left="20.0" right="15.0" top="4.0" />
                                                          </HBox.margin>

@@ -1,14 +1,20 @@
 package com.example.agence;
 
-
+import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 import com.example.agence.handelers.searsh.searchResult;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class SearchController {
 
@@ -29,15 +35,11 @@ public class SearchController {
 
     @FXML
     public void initialize() {
-        System.out.println("###################search interface###################");
         serachBtn.setOnAction(event -> {
             searchResult ac = new searchResult();
             ac.search(deparField, arrivalField, dateField, passenger, event);
 
-            //Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            //currentStage.close();
         });
     }
 
 }
-
