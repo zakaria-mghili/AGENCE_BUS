@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 
 public class regex {
     private static final String EMAIL_REGEX = "^[A-Za-z0-9._]+@[A-Za-z0-9]+\\.+[a-z]+$";
-    private static final String PHONE_REGEX = "^[0-9]+$";
+    private static final String PHONE_REGEX = "^\\d{10}$";
     private static final String PASSWD_REGEX = "^.{8,}+$";
 
     //Email

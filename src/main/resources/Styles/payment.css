@@ -52,12 +52,12 @@
 .buttonCANCEL {
     -fx-background-color: #ff5757;
     -fx-text-fill: white;
-    -fx-background-radius :25;
+    -fx-background-radius :20;
 }
 
 .buttonCANCEL:hover {
     -fx-background-color: #f2feef;
     -fx-text-fill: #ff5757;
     -fx-border-color: #ff5757;
-    -fx-border-radius :25;
+    ---fx-border-radius :20;
 }

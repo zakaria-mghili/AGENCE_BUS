@@ -42,18 +42,11 @@ public class action {
 
                         /* open interface of search */
                         try {
-                            // Load the FXML file for the new interface
                             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("search.fxml"));
                             Parent root = fxmlLoader.load();
-
-                            // close current interface
-                            Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-                            currentStage.close();
-
-                            // Create a new stage for the new interface
-                            Stage stage = new Stage();
-                            stage.setTitle("New Interface");
-                            stage.setScene(new Scene(root));
+                            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+                            Scene scene = new Scene(root);
+                            stage.setScene(scene);
                             stage.show();
                         } catch (Exception e) {
                             e.printStackTrace();

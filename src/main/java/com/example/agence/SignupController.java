@@ -1,6 +1,5 @@
 package com.example.agence;
 
-import com.example.agence.handelers.sign_in.action;
 import com.example.agence.handelers.sign_up.singUp_action;
 
 import javafx.fxml.FXML;
@@ -31,8 +30,8 @@ public class SignupController {
     private Button signupBtn;
 
     @FXML
-        private Hyperlink alreadylink;
-    
+    private Hyperlink hyperlink;
+
     @FXML
     public void initialize() {
         singUp_action ac = new singUp_action();
@@ -40,28 +39,26 @@ public class SignupController {
             System.out.println("######################################");
             ac.signUp(name, gmailField, phone, passwordField, event);
             // Get the current stage and close it
-            //Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            //currentStage.close();
+            // Stage currentStage = (Stage) ((javafx.scene.Node)
+            // event.getSource()).getScene().getWindow();
+            // currentStage.close();
         });
-        
-        alreadylink.setOnAction(event -> {
+
+        hyperlink.setOnAction(event -> {
             System.out.println("######################################");
             // Get the current stage and close it
             try {
                 // Load the FXML file for the new interface
                 FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("hello-view.fxml"));
                 Parent root = fxmlLoader.load();
-
-                // Create a new stage for the new interface
-                Stage stage = new Stage();
-                stage.setTitle("New Interface");
-                stage.setScene(new Scene(root));
+                Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
                 stage.show();
+
             } catch (Exception e) {
-                    e.printStackTrace();
+                e.printStackTrace();
             }
-            Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            currentStage.close();
         });
     }
 }

@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="background" stylesheets="@../../../Styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="com.example.agence.SignupController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="background" stylesheets="@../../../Styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <BorderPane layoutX="204.0" layoutY="75.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
@@ -30,7 +30,7 @@
                 </HBox>
             </top>
             <left>
-                <VBox fx:id="hyperlink" prefHeight="502.0" prefWidth="150.0" BorderPane.alignment="CENTER" />
+                <VBox prefHeight="502.0" prefWidth="150.0" BorderPane.alignment="CENTER" />
             </left>
             <right>
                 <VBox prefHeight="200.0" prefWidth="150.0" />
