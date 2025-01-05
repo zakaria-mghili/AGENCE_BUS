@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -13,14 +12,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:controller="com.example.agence.PaymentController" prefHeight="600.0" prefWidth="1000.0"
-            xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" styleClass="background" stylesheets="@../../../Styles/payment.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agence.PaymentController">
     <children>
         <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
-                <HBox prefHeight="48.0" prefWidth="1000.0" alignment="CENTER">
+                <HBox alignment="CENTER" prefHeight="96.0" prefWidth="1000.0">
                     <children>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../Images/GreebLogo.png" />
                             </image>
@@ -29,22 +27,36 @@
                 </HBox>
             </top>
             <center>
-                <VBox alignment="CENTER" spacing="15.0" stylesheets="@../../../Styles/payment.css">
+                <VBox alignment="CENTER" prefHeight="438.0" prefWidth="800.0" spacing="15.0" styleClass="container" stylesheets="@../../../Styles/payment.css">
                     <children>
                         <Label text="PAYMENT DETAIL" textFill="#1b9476">
                             <font>
                                 <Font name="Montserrat-Regular" size="20.0" />
                             </font>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
                         </Label>
 
                         <!-- Card Holder Name -->
-                        <VBox spacing="5.0">
+                        <VBox prefHeight="65.0" prefWidth="852.0" spacing="5.0">
                             <Label text="Card holder name" textFill="#1b9476">
                                 <font>
                                     <Font name="Montserrat-Regular" size="16.0" />
                                 </font>
+                        <VBox.margin>
+                           <Insets left="75.0" />
+                        </VBox.margin>
                             </Label>
-                            <TextField fx:id="cardholderField" promptText="Enter Card Holder Name" />
+                     <VBox prefHeight="39.0" prefWidth="756.0">
+                        <children>
+                           <TextField fx:id="cardholderField" prefHeight="38.0" prefWidth="753.0" promptText="Enter Card Holder Name">
+                              <VBox.margin>
+                                 <Insets left="50.0" right="50.0" />
+                              </VBox.margin>
+                           </TextField>
+                        </children>
+                     </VBox>
                         </VBox>
 
                         <!-- Card Number -->
@@ -53,17 +65,26 @@
                                 <font>
                                     <Font name="Montserrat-Regular" size="16.0" />
                                 </font>
+                        <VBox.margin>
+                           <Insets left="75.0" />
+                        </VBox.margin>
                             </Label>
-                            <TextField fx:id="cardnumField" promptText="Enter Card Number" />
+                            <TextField fx:id="cardnumField" prefHeight="38.0" prefWidth="753.0" promptText="Enter Card Number">
+                        <VBox.margin>
+                           <Insets left="50.0" right="50.0" />
+                        </VBox.margin></TextField>
                         </VBox>
 
                         <!-- Expiration Date -->
-                        <HBox spacing="10.0" alignment="CENTER">
+                        <HBox alignment="CENTER" spacing="10.0">
                             <VBox spacing="5.0">
                                 <Label text="Expiration Month" textFill="#1b9476">
                                     <font>
                                         <Font name="Montserrat-Regular" size="16.0" />
                                     </font>
+                           <VBox.margin>
+                              <Insets left="15.0" />
+                           </VBox.margin>
                                 </Label>
                                 <TextField fx:id="monthEXP" promptText="MM" />
                             </VBox>
@@ -72,8 +93,14 @@
                                     <font>
                                         <Font name="Montserrat-Regular" size="16.0" />
                                     </font>
+                           <VBox.margin>
+                              <Insets left="15.0" />
+                           </VBox.margin>
                                 </Label>
                                 <TextField fx:id="yearEXP" promptText="YYYY" />
+                        <HBox.margin>
+                           <Insets right="288.0" />
+                        </HBox.margin>
                             </VBox>
                         </HBox>
 
@@ -83,18 +110,41 @@
                                 <font>
                                     <Font name="Montserrat-Regular" size="16.0" />
                                 </font>
+                        <VBox.margin>
+                           <Insets left="75.0" />
+                        </VBox.margin>
                             </Label>
-                            <TextField fx:id="CVV" promptText="Enter CVV" />
+                            <TextField fx:id="CVV" promptText="Enter CVV" stylesheets="@../../../Styles/payment.css">
+                        <VBox.margin>
+                           <Insets left="50.0" right="50.0" />
+                        </VBox.margin></TextField>
                         </VBox>
 
                         <!-- Buttons -->
-                        <HBox spacing="20.0" alignment="CENTER">
-                            <Button fx:id="validateBtn" text="Validate" textFill="#ffffff" styleClass="button-validate" />
-                            <Button fx:id="cancelBtn" text="Cancel" textFill="#ff5757" styleClass="button-cancel" />
+                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="800.0" spacing="20.0">
+                     <VBox prefHeight="26.0" prefWidth="150.0" />
+                            <Button fx:id="validateBtn" prefHeight="40.0" prefWidth="200.0" stylesheets="@../../../Styles/payment.css" text="Validate" textFill="#ffffff">
+                        <HBox.margin>
+                           <Insets />
+                        </HBox.margin></Button>
+                            <Button fx:id="cancelBtn" prefHeight="40.0" prefWidth="200.0" styleClass="buttonCANCEL" stylesheets="@../../../Styles/payment.css" text="Cancel" textFill="#ff5757" />
+                     <VBox prefHeight="200.0" prefWidth="150.0" />
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
                         </HBox>
                     </children>
                 </VBox>
             </center>
+         <left>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+         </right>
+         <bottom>
+            <HBox prefHeight="80.0" prefWidth="1000.0" BorderPane.alignment="CENTER" />
+         </bottom>
         </BorderPane>
     </children>
 </AnchorPane>

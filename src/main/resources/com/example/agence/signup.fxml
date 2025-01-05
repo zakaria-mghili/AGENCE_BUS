@@ -15,11 +15,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:controller="com.example.agence.SignupController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="background" stylesheets="@../../../Styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="background" stylesheets="@../../../Styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agence.SignupController">
     <children>
         <BorderPane layoutX="204.0" layoutY="75.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
-                <HBox prefHeight="75.0" prefWidth="1215.0" BorderPane.alignment="CENTER">
+                <HBox prefHeight="82.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
                     <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -40,7 +40,7 @@
                     <children>
                         <HBox prefHeight="58.0" prefWidth="699.0" styleClass="backgroundcreatesign" stylesheets="@../../../Styles/style.css">
                             <children>
-                                <VBox prefHeight="41.0" prefWidth="74.0" stylesheets="@../../../Styles/style.css" />
+                                <VBox prefHeight="50.0" prefWidth="100.0" stylesheets="@../../../Styles/style.css" />
                                 <VBox prefHeight="41.0" prefWidth="188.0" styleClass="sign" stylesheets="@../../../Styles/style.css">
                                     <children>
                                         <HBox prefHeight="41.0" prefWidth="187.0" styleClass="sign" stylesheets="@../../../Styles/SignUP.css">
@@ -48,12 +48,12 @@
                                                 <VBox prefHeight="41.0" prefWidth="34.0" />
                                                 <VBox prefHeight="71.0" prefWidth="43.0">
                                                     <children>
-                                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
                                                                 <Image url="@../../../Images/RedTicket.png" />
                                                             </image>
                                                             <VBox.margin>
-                                                                <Insets top="5.0" />
+                                                                <Insets bottom="5.0" top="10.0" />
                                                             </VBox.margin>
                                                         </ImageView>
                                                     </children>
@@ -65,7 +65,7 @@
                                                                 <Font name="Montserrat-Regular" size="18.0" />
                                                             </font>
                                                             <VBox.margin>
-                                                                <Insets top="10.0" />
+                                                                <Insets left="5.0" top="15.0" />
                                                             </VBox.margin>
                                                         </Label>
                                                     </children>
@@ -81,12 +81,12 @@
                                                 <VBox prefHeight="41.0" prefWidth="18.0" />
                                                 <VBox prefHeight="71.0" prefWidth="43.0">
                                                     <children>
-                                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
                                                                 <Image url="@../../../Images/RedTicket.png" />
                                                             </image>
                                                             <VBox.margin>
-                                                                <Insets left="10.0" top="5.0" />
+                                                                <Insets left="10.0" top="10.0" />
                                                             </VBox.margin>
                                                         </ImageView>
                                                     </children>
@@ -98,7 +98,7 @@
                                                                 <Font name="Montserrat-Regular" size="18.0" />
                                                             </font>
                                                             <VBox.margin>
-                                                                <Insets top="8.0" />
+                                                                <Insets left="5.0" top="13.0" />
                                                             </VBox.margin>
                                                         </Label>
                                                     </children>
@@ -108,14 +108,15 @@
                                     </children></HBox>
                             </children>
                         </HBox>
-                        <HBox prefHeight="58.0" prefWidth="699.0">
+                  <HBox prefHeight="38.0" prefWidth="200.0" />
+                        <HBox prefHeight="40.0" prefWidth="699.0">
                             <children>
                                 <Label text="My name" textFill="#1b9476">
                                     <font>
                                         <Font name="Montserrat-Regular" size="18.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="40.0" right="30.0" top="13.0" />
+                                        <Insets left="40.0" right="30.0" top="1.0" />
                                     </HBox.margin>
                                 </Label>
                             </children>
@@ -139,7 +140,7 @@
                                         <Font name="Montserrat-Regular" size="18.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="40.0" right="30.0" top="13.0" />
+                                        <Insets left="40.0" right="30.0" top="10.0" />
                                     </HBox.margin>
                                 </Label>
                             </children>
@@ -162,7 +163,7 @@
                                         <Font name="Montserrat-Regular" size="18.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="40.0" right="30.0" top="13.0" />
+                                        <Insets left="40.0" right="30.0" top="10.0" />
                                     </HBox.margin>
                                 </Label>
                             </children></HBox>
@@ -181,7 +182,7 @@
                             <children>
                                 <Label text="My password" textFill="#1b9476">
                                     <HBox.margin>
-                                        <Insets left="40.0" top="13.0" />
+                                        <Insets left="40.0" top="10.0" />
                                     </HBox.margin>
                                     <font>
                                         <Font name="Montserrat-Regular" size="18.0" />
@@ -204,7 +205,7 @@
                         <HBox prefHeight="30.0" prefWidth="200.0" />
                         <Button fx:id="signupBtn" mnemonicParsing="false" prefHeight="46.0" prefWidth="766.0" stylesheets="@../../../Styles/SignUP.css" text="Sign up">
                             <font>
-                                <Font name="Montserrat-Regular" size="18.0" />
+                                <Font name="Montserrat-Regular" size="16.0" />
                             </font>
                             <cursor>
                                 <Cursor fx:constant="HAND" />
@@ -220,10 +221,10 @@
                                     <children>
                                         <Hyperlink fx:id="hyperlink" text="I already have an account">
                                             <font>
-                                                <Font name="Montserrat-Regular" size="12.0" />
+                                                <Font name="Montserrat-Regular" size="10.0" />
                                             </font>
                                  <VBox.margin>
-                                    <Insets />
+                                    <Insets left="20.0" top="2.0" />
                                  </VBox.margin>
                                         </Hyperlink>
                                     </children>
@@ -237,7 +238,7 @@
                 </VBox>
             </center>
             <bottom>
-                <HBox prefHeight="22.0" prefWidth="1215.0" BorderPane.alignment="CENTER" />
+                <HBox prefHeight="57.0" prefWidth="1000.0" BorderPane.alignment="CENTER" />
             </bottom>
         </BorderPane>
     </children>
