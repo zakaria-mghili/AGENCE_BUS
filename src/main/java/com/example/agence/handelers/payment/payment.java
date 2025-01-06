@@ -6,46 +6,28 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import com.example.agence.handelers.sign_up.databaseConn;
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class payment {
 
-    public void validateAndSubmit(String cardholderName, String cardNumber, String monthExpiration, String yearExpiration, String cvv, int passengers, double montant, String email, Stage primaryStage) {
+    public static void validateAndSubmit(String cardholderName, String cardNumber, String monthExpiration, String yearExpiration, String cvv, int passengers, double montant, String emailT, Stage primaryStage) {
         // Validate fields
-
-        String emailClient = email; // Assuming this method retrieves the email client value
-
-    if (emailClient == null || emailClient.isEmpty()) {
-        showAlert("Validation Error", "Email client cannot be null or empty.");
-        return;
-    }
-        if (cardholderName.isEmpty() || cardNumber.isEmpty() || monthExpiration.isEmpty() || yearExpiration.isEmpty() || cvv.isEmpty()) {
-            showAlert("Validation Error", "Please complete all text fields.");
-            return;
-        }
-
-        if (!validateCardDetails(cardNumber, monthExpiration, yearExpiration, cvv)) {
-            showAlert("Validation Error", "Card details are incorrect. Please check and try again.");
+        if (!validateFields(cardholderName, cardNumber, monthExpiration, yearExpiration, cvv, emailT)) {
             return;
         }
 
         // Database connection and insertion
-        try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gestion_bus", "root", "");
-            String sql = "INSERT INTO reservation (email_client, id_voyage, number_passengers, montant_paye) VALUES (?, 1, ?, ?)";
-            PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setString(1, email);
-            statement.setInt(2,passengers);
-            statement.setDouble(3,montant);
+        String sql = "INSERT INTO reservation (email_client, id_voyage, number_passengers, montant_paye) VALUES (?, 1, ?, ?)";
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gestion_bus", "root", "");
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, emailT);
+            statement.setInt(2, passengers);
+            statement.setDouble(3, montant);
             statement.executeUpdate();
-            connection.close();
             
             // Show success message
             showAlert("Payment Successful", "Your payment is valid!");
@@ -54,51 +36,59 @@ public class payment {
             openDownloadTicketScene(primaryStage);
             
         } catch (SQLException ex) {
-            showAlert("Database Error", "Unable to connect to the database. Please try again later.");
             ex.printStackTrace();
+            showAlert("Database Error", "An error occurred while processing your payment. Please try again.");
         }
     }
 
-    private boolean validateCardDetails(String cardNumber, String expirationMonth, String expirationYear, String cvv) {
-        // Example validation logic, replace with your specific requirements
-        if (cardNumber.length() != 1 || !cardNumber.matches("\\d+")) {
+    private static boolean validateFields(String cardholderName, String cardNumber, String monthExpiration, String yearExpiration, String cvv, String emailT) {
+        if (emailT == null || emailT.isEmpty()) {
+            showAlert("Validation Error", "Email client cannot be null or empty.");
             return false;
         }
-        if (expirationMonth.length() != 2 || !expirationMonth.matches("\\d{2}") || Integer.parseInt(expirationMonth) > 12) {
+        if (cardholderName.isEmpty() || cardNumber.isEmpty() || monthExpiration.isEmpty() || yearExpiration.isEmpty() || cvv.isEmpty()) {
+            showAlert("Validation Error", "Please complete all text fields.");
             return false;
         }
-        if (expirationYear.length() != 2 || !expirationYear.matches("\\d{2}")) {
+      
+        if (!cardNumber.matches("\\d{16}")) {
+            showAlert("Validation Error", "Invalid card number format. Please enter a 16-digit card number.");
             return false;
         }
-        if (cvv.length() != 3 || !cvv.matches("\\d{3}")) {
+        if (!monthExpiration.matches("\\d{2}") || Integer.parseInt(monthExpiration) < 1 || Integer.parseInt(monthExpiration) > 12) {
+            showAlert("Validation Error", "Invalid month format. Please enter a valid month (01-12).");
+            return false;
+        }
+        if (!yearExpiration.matches("\\d{4}")) {
+            showAlert("Validation Error", "Invalid year format. Please enter a 4-digit year.");
+            return false;
+        }
+        if (!cvv.matches("\\d{3}")) {
+            showAlert("Validation Error", "Invalid CVV format. Please enter a 3-digit CVV.");
             return false;
         }
         return true;
     }
-    
-    public void showAlert(String title, String message) {
-        Alert alert = new Alert(AlertType.INFORMATION);
+
+    private static void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
     }
 
-    public void openDownloadTicketScene(Stage currentStage) {
+    private static void openDownloadTicketScene(Stage primaryStage) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/path/to/download_ticket.fxml"));
+            FXMLLoader loader = new FXMLLoader(payment.class.getResource("download.fxml"));
             Parent root = loader.load();
-
-            Scene downloadTicketScene = new Scene(root);
-            Stage newStage = new Stage();
-            newStage.setTitle("Download Ticket");
-            newStage.setScene(downloadTicketScene);
-            newStage.show();
-
-            currentStage.close();
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();
-            showAlert("Error", "Unable to load the download ticket scene.");
+            showAlert("Scene Error", "An error occurred while opening the download ticket scene.");
         }
     }
+    ////////////
 }

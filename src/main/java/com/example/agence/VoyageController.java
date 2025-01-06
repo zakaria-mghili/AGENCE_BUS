@@ -1,13 +1,8 @@
 package com.example.agence;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
 
-import com.example.agence.handelers.searsh.voyage;
+import com.example.agence.handelers.models.SharedData;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -49,6 +44,9 @@ public class VoyageController {
         arrivaltimeid.setText(arr[3]);
         numberpassengerid.setText(arr[4]);
         priceid.setText(arr[5]);
+        SharedData.getInstance().setMontant(Double.parseDouble(arr[5]));
+        SharedData.getInstance().setDepartureDate(arr[2]);
+        SharedData.getInstance().setArrivalDate(arr[3]);
 
         book.setOnAction(e -> handleBookButtonAction(e));
     }

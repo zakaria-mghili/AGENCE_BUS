@@ -5,6 +5,10 @@ public class SharedData {
     private String emailT;
     private int passengers;
     private double montant;
+    private String departureStation;
+    private String arrivalStation;
+    private String departureDate;
+    private String arrivalDate;
 
     public SharedData() {
         // Private constructor to prevent instantiation
@@ -18,32 +22,66 @@ public class SharedData {
     }
 
     // Getters and Setters
-    public String getemailT() {
+    public String getEmailT() {
         return emailT;
     }
 
-    public void setemailT(String emailT) {
+    public void setEmailT(String emailT) {
         this.emailT = emailT;
     }
 
-    public int getpassengers() {
+    public int getPassengers() {
         return passengers;
     }
 
-    public void setpassengers(int passengers) {
+    public void setPassengers(int passengers) {
         this.passengers = passengers;
     }
 
-    public double getmontant() {
+    public double getMontant() {
         return montant;
     }
 
-    public void setmontant(double montant) {
+    public void setMontant(double montant) {
         this.montant = montant;
     }
 
+<<<<<<< HEAD
     public void setEmailInstance(String text) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'setEmailInstance'");
     }
+=======
+    public String getDepartureStation() {
+        return departureStation;
+    }
+
+    public void setDepartureStation(String departureStation) {
+        this.departureStation = departureStation;
+    }
+
+    public String getArrivalStation() {
+        return arrivalStation;
+    }
+
+    public void setArrivalStation(String arrivalStation) {
+        this.arrivalStation = arrivalStation;
+    }
+
+    public String getDepartureDate() {
+        return departureDate;
+    }
+
+    public void setDepartureDate(String departureDate) {
+        this.departureDate = departureDate;
+    }
+    public String getArrivalDate() {
+        return arrivalDate;
+    }
+
+    public void setArrivalDate(String arrivalDate) {
+        this.arrivalDate = arrivalDate;
+    }
+    
+>>>>>>> c8d4071acdd754565121378f6a5b46c0734ca871
 }

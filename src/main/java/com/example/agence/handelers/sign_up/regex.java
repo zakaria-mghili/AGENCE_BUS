@@ -3,8 +3,6 @@ package com.example.agence.handelers.sign_up;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-//import javax.swing.JOptionPane;
-
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 

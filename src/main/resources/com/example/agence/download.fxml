@@ -12,11 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD:src/main/resources/com/example/agence/downloadTicket.fxml
-<AnchorPane fx:controller="com.example.agence.DownloadTicketController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1215.0" styleClass="background" stylesheets="@../../../Styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-=======
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="background" stylesheets="@../../../Styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
->>>>>>> fe323b5c49f8b364126d105c39cef4e002b24dba:src/main/resources/com/example/agence/download.fxml
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="background" stylesheets="@../../../Styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agence.DownloadTicketController">
     <children>
         <BorderPane layoutX="204.0" layoutY="75.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
