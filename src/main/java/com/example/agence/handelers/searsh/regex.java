@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 
 public class regex {
     private static final String NUM_REGEX = "^[1-9]$";
-    private static final String CITY_REGEX = "^(fès|rabat|casablanca|marrakech|tanger|chefchaouen)$";
+    private static final String CITY_REGEX = "^(fes|fés|fès|rabat|casablanca|marrakech|tanger|chefchaouen)$";
 
     // Email
     public static Boolean validPassenger(TextField pass) {

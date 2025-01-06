@@ -6,7 +6,7 @@ public class SharedData {
     private int passengers;
     private double montant;
 
-    private SharedData() {
+    public SharedData() {
         // Private constructor to prevent instantiation
     }
 
@@ -40,5 +40,10 @@ public class SharedData {
 
     public void setmontant(double montant) {
         this.montant = montant;
+    }
+
+    public void setEmailInstance(String text) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setEmailInstance'");
     }
 }

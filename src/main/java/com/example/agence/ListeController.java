@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import com.example.agence.handelers.searsh.monthName;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -53,8 +55,11 @@ public class ListeController implements Initializable {
                     // Configure le contrôleur de l'élément
                     VoyageController voyageController = fxmlLoader.getController();
                     voyageController.setData(data.get(i));
+                    monthlist.setText(monthName.monthName(Integer.parseInt(data.get(i)[7])));
+                    daylist.setText(data.get(i)[6]);
+                    
 
-                    // Ajoute l'élément au GridPane
+                    // Ajoute l'élément au GridPan
                     // grid.getChildren().add(anchorPane);
                     grid.add(anchorPane, 0, row++);
                     GridPane.setMargin(anchorPane, new Insets(10));
@@ -80,6 +85,11 @@ public class ListeController implements Initializable {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("search.fxml"));
                 Parent root = fxmlLoader.load();
+
+                SearchController searchController = fxmlLoader.getController();
+                searchController.setData(data.get(0)[0], data.get(0)[1], data.get(0)[4]);
+                //listeController.setData(rlt);
+
                 Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
                 Scene scene = new Scene(root);
                 stage.setScene(scene);

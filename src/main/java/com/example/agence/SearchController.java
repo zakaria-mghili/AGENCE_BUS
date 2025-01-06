@@ -38,8 +38,12 @@ public class SearchController {
         serachBtn.setOnAction(event -> {
             searchResult ac = new searchResult();
             ac.search(deparField, arrivalField, dateField, passenger, event);
-
         });
+        
     }
-
+    public void setData(String cityA, String cityD, String pass) {
+        arrivalField.setText(cityA);
+        deparField.setText(cityD);
+        passenger.setText(pass);
+    }
 }

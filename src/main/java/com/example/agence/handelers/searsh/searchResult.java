@@ -5,9 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +42,7 @@ public class searchResult {
                 System.out.println(passengers);
                 System.out.println("fff" + passengers + "fff");
                 System.out.println(passengers.isEmpty());
-                query = " SELECT destination, depart, TIME(date_debut), TIME(date_arrival), prix FROM voyage WHERE depart = ? AND destination = ? AND DATE(date_debut) = ? ";
+                query = " SELECT MONTH(date_debut) AS monthD, MONTH(date_arrival) AS monthA, DAY(date_debut) AS dayD, DAY(date_arrival) AS dayA, destination, depart, TIME_FORMAT(date_debut, '%H:%i') AS timeD, TIME_FORMAT(date_arrival, '%H:%i') AS timeA, prix FROM voyage  WHERE depart = ? AND destination = ? AND DATE(date_debut) = ? ";
 
                 try (PreparedStatement stmt = databaseConn.getConnection().prepareStatement(query)) {
                     stmt.setString(1, departureStation);
@@ -57,13 +54,17 @@ public class searchResult {
                     if (rs.next()) {
                         // String value = rs.getString("destination");
                         do {
-                            String[] voy = new String[6];
+                            String[] voy = new String[8];
                             voy[0] = rs.getString("destination");
                             voy[1] = rs.getString("depart");
-                            voy[2] = rs.getString("TIME(date_debut)");
-                            voy[3] = rs.getString("TIME(date_arrival)");
+                            voy[2] = rs.getString("timeD");
+                            voy[3] = rs.getString("timeA");
                             voy[4] = passenger.getText();
                             voy[5] = rs.getString("prix");
+                            voy[6] = rs.getString("dayD");
+                            //voy[7] = rs.getString("dayA");
+                            voy[7] = rs.getString("monthD");
+                            //voy[9] = rs.getString("monthA");
 
                             rlt.add(voy);
 
