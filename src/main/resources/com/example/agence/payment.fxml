@@ -16,7 +16,7 @@
     <children>
         <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
-                <HBox alignment="CENTER" prefHeight="96.0" prefWidth="1000.0">
+                <HBox alignment="CENTER" prefHeight="89.0" prefWidth="1000.0">
                     <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -34,7 +34,7 @@
                                 <Font name="Montserrat-Regular" size="20.0" />
                             </font>
                      <VBox.margin>
-                        <Insets top="15.0" />
+                        <Insets top="8.0" />
                      </VBox.margin>
                         </Label>
 
@@ -123,14 +123,20 @@
                         <!-- Buttons -->
                         <HBox alignment="CENTER" prefHeight="40.0" prefWidth="800.0" spacing="20.0">
                      <VBox prefHeight="26.0" prefWidth="150.0" />
-                            <Button fx:id="validateBtn" prefHeight="40.0" prefWidth="200.0" stylesheets="@../../../Styles/payment.css" text="Validate" textFill="#ffffff" onAction="#handleValidate">
+                            <Button fx:id="validateBtn" onAction="#handleValidate" prefHeight="40.0" prefWidth="200.0" stylesheets="@../../../Styles/payment.css" text="Validate" textFill="#ffffff">
                         <HBox.margin>
                            <Insets />
-                        </HBox.margin></Button>
-                            <Button fx:id="cancelBtn" prefHeight="40.0" prefWidth="200.0" styleClass="buttonCANCEL" stylesheets="@../../../Styles/payment.css" text="Cancel" textFill="#ff5757" onAction="#handleCancel" />
+                        </HBox.margin>
+                        <font>
+                           <Font size="14.0" />
+                        </font></Button>
+                            <Button fx:id="cancelBtn" onAction="#handleCancel" prefHeight="40.0" prefWidth="200.0" styleClass="buttonCANCEL" stylesheets="@../../../Styles/payment.css" text="Cancel" textFill="#ff5757">
+                        <font>
+                           <Font size="14.0" />
+                        </font></Button>
                      <VBox prefHeight="200.0" prefWidth="150.0" />
                      <VBox.margin>
-                        <Insets bottom="10.0" />
+                        <Insets bottom="15.0" />
                      </VBox.margin>
                         </HBox>
                     </children>
@@ -143,7 +149,7 @@
             <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
          </right>
          <bottom>
-            <HBox prefHeight="80.0" prefWidth="1000.0" BorderPane.alignment="CENTER" />
+            <HBox prefHeight="51.0" prefWidth="1000.0" BorderPane.alignment="CENTER" />
          </bottom>
         </BorderPane>
     </children>

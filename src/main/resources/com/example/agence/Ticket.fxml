@@ -14,7 +14,7 @@
     <children>
         <BorderPane layoutX="204.0" layoutY="75.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
-                <HBox prefHeight="180.0" prefWidth="1215.0" BorderPane.alignment="CENTER">
+                <HBox prefHeight="200.0" prefWidth="1215.0" BorderPane.alignment="CENTER">
                     <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -27,10 +27,10 @@
                 </HBox>
             </top>
             <left>
-                <VBox prefHeight="502.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                <VBox prefHeight="502.0" prefWidth="250.0" BorderPane.alignment="CENTER" />
             </left>
             <right>
-                <VBox prefHeight="200.0" prefWidth="200.0" />
+                <VBox prefHeight="200.0" prefWidth="250.0" />
             </right>
             <center>
                 <VBox prefHeight="342.0" prefWidth="815.0" styleClass="container" stylesheets="@../../../Styles/TICKET.CSS" BorderPane.alignment="CENTER">
@@ -38,7 +38,7 @@
                         <HBox prefHeight="70.0" prefWidth="600.0">
                      <children>
                         <VBox prefHeight="55.0" prefWidth="486.0" />
-                        <VBox prefHeight="200.0" prefWidth="150.0" styleClass="containertop" stylesheets="@../../../Styles/TICKET.CSS" />
+                        <VBox prefHeight="34.0" prefWidth="150.0" styleClass="containertop" stylesheets="@../../../Styles/TICKET.CSS" />
                      </children></HBox>
                         <HBox prefHeight="172.0" prefWidth="600.0">
                      <children>
@@ -53,7 +53,7 @@
                                                 <Image url="@../../../Images/departpiont.png" />
                                              </image>
                                              <VBox.margin>
-                                                <Insets left="42.0" right="15.0" top="10.0" />
+                                                <Insets left="42.0" right="15.0" top="11.0" />
                                              </VBox.margin>
                                           </ImageView>
                                        </children></VBox>
@@ -61,7 +61,7 @@
                                        <children>
                                           <Label fx:id="departurevilleticket" prefHeight="23.0" prefWidth="173.0" text="TANGER VILL" textFill="#f2feef">
                                              <font>
-                                                <Font name="Montserrat-Regular" size="22.0" />
+                                                <Font name="Montserrat-Regular" size="20.0" />
                                              </font>
                                              <VBox.margin>
                                                 <Insets left="10.0" top="5.0" />
@@ -84,12 +84,12 @@
                               </HBox>
                               <HBox prefHeight="50.0" prefWidth="486.0">
                                  <children>
-                                    <VBox prefHeight="200.0" prefWidth="165.0" />
+                                    <VBox prefHeight="45.0" prefWidth="190.0" />
                                     <VBox prefHeight="40.0" prefWidth="321.0">
                                        <children>
                                           <Label prefHeight="23.0" prefWidth="173.0" text="PASSENGER" textFill="#f2feef">
                                              <font>
-                                                <Font name="Montserrat-Regular" size="22.0" />
+                                                <Font name="Montserrat-Regular" size="20.0" />
                                              </font>
                                              <VBox.margin>
                                                 <Insets left="10.0" top="5.0" />
@@ -127,7 +127,7 @@
                                        <children>
                                           <Label fx:id="arivalvilleticket" prefHeight="23.0" prefWidth="173.0" text="KENITRA" textFill="#f2feef">
                                              <font>
-                                                <Font name="Montserrat-Regular" size="22.0" />
+                                                <Font name="Montserrat-Regular" size="20.0" />
                                              </font>
                                              <VBox.margin>
                                                 <Insets left="10.0" top="5.0" />
@@ -150,29 +150,35 @@
                                  </children></HBox>
                            </children>
                         </VBox>
-                        <VBox prefHeight="200.0" prefWidth="150.0" styleClass="containercenter" stylesheets="@../../../Styles/TICKET.CSS">
+                        <VBox prefHeight="134.0" prefWidth="150.0" styleClass="containercenter" stylesheets="@../../../Styles/TICKET.CSS">
                            <children>
                               <Label fx:id="priceticket" rotate="90.0" text="170 DH" textFill="#ff5757">
                                  <font>
-                                    <Font name="Montserrat-Regular" size="28.0" />
+                                    <Font name="Montserrat-Regular" size="18.0" />
                                  </font>
                                  <VBox.margin>
-                                    <Insets left="18.0" top="60.0" />
+                                    <Insets left="10.0" top="55.0" />
                                  </VBox.margin>
                               </Label>
-                           </children></VBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin></VBox>
                      </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
                         </HBox>
-                        <HBox layoutX="10.0" layoutY="224.0" prefHeight="48.0" prefWidth="600.0">
+                        <HBox layoutX="10.0" layoutY="224.0" prefHeight="69.0" prefWidth="499.0">
                      <children>
-                        <VBox prefHeight="70.0" prefWidth="486.0" />
-                        <VBox prefHeight="42.0" prefWidth="150.0" styleClass="containerdown" stylesheets="@../../../Styles/TICKET.CSS" />
+                        <VBox prefHeight="33.0" prefWidth="486.0" />
+                        <VBox prefHeight="22.0" prefWidth="150.0" styleClass="containerdown" stylesheets="@../../../Styles/TICKET.CSS" />
                      </children></HBox>
                     </children>
                 </VBox>
             </center>
             <bottom>
-                <HBox prefHeight="172.0" prefWidth="1000.0" BorderPane.alignment="CENTER" />
+                <HBox prefHeight="200.0" prefWidth="1000.0" BorderPane.alignment="CENTER" />
             </bottom>
         </BorderPane>
     </children>

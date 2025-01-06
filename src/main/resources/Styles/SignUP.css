@@ -68,7 +68,7 @@
 }
 
 .buttonCANCEL1:hover {
-    -fx-background-color: #124660;
+    -fx-background-color: #f2feef;
     -fx-text-fill: #ff5757;
     -fx-border-color: #ff5757;
     -fx-border-radius :25;
