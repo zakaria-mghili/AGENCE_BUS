@@ -36,7 +36,7 @@ public class TicketController {
         datearrivaleticket.setText(sharedData.getArrivalDate());
         datedepartureticket.setText(sharedData.getDepartureDate());
         departurevilleticket.setText(sharedData.getDepartureStation());
-        npassengerticket.setText(Double.toString(sharedData.getPassengers()));
+        npassengerticket.setText(Integer.toString(sharedData.getPassengers()));
         priceticket.setText(Double.toString(sharedData.getMontant()));
     }
 }

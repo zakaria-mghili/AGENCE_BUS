@@ -33,6 +33,7 @@ public class SigninControler {
             System.out.println("###################sign in###################");
             action ac = new action();
             ac.sing_in(gmailField, password, event);
+            SharedData.getInstance().setEmailT(gmailField.getText());
         });
         createyours.setOnAction(event -> {
             try {

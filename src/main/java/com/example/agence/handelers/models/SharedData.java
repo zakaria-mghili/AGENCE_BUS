@@ -46,12 +46,6 @@ public class SharedData {
         this.montant = montant;
     }
 
-<<<<<<< HEAD
-    public void setEmailInstance(String text) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setEmailInstance'");
-    }
-=======
     public String getDepartureStation() {
         return departureStation;
     }
@@ -83,5 +77,4 @@ public class SharedData {
         this.arrivalDate = arrivalDate;
     }
     
->>>>>>> c8d4071acdd754565121378f6a5b46c0734ca871
 }

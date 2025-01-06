@@ -80,7 +80,7 @@ public class payment {
 
     private static void openDownloadTicketScene(Stage primaryStage) {
         try {
-            FXMLLoader loader = new FXMLLoader(payment.class.getResource("download.fxml"));
+            FXMLLoader loader = new FXMLLoader(payment.class.getResource("/com/example/agence/download.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);

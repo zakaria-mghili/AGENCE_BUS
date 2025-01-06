@@ -44,10 +44,12 @@ public class VoyageController {
         arrivaltimeid.setText(arr[3]);
         numberpassengerid.setText(arr[4]);
         priceid.setText(arr[5]);
-        SharedData.getInstance().setMontant(Double.parseDouble(arr[5]));
+        SharedData.getInstance().setArrivalStation(arr[0]);
+        SharedData.getInstance().setDepartureStation(arr[1]);
         SharedData.getInstance().setDepartureDate(arr[2]);
         SharedData.getInstance().setArrivalDate(arr[3]);
-
+        SharedData.getInstance().setPassengers(Integer.parseInt(arr[4]));
+        SharedData.getInstance().setMontant(Double.parseDouble(arr[5]));
         book.setOnAction(e -> handleBookButtonAction(e));
     }
 
