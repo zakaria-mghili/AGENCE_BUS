@@ -8,6 +8,7 @@ public class SharedData {
     private String departureStation;
     private String arrivalStation;
     private String departureDate;
+    private String arrivalDate;
 
     private SharedData() {
         // Private constructor to prevent instantiation
@@ -68,4 +69,12 @@ public class SharedData {
     public void setDepartureDate(String departureDate) {
         this.departureDate = departureDate;
     }
+    public String getArrivalDate() {
+        return arrivalDate;
+    }
+
+    public void setArrivalDate(String arrivalDate) {
+        this.arrivalDate = arrivalDate;
+    }
+    
 }
