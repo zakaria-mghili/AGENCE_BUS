@@ -42,7 +42,7 @@ public class PaymentController {
         // Initialization logic if needed
     }
 
-    @FXML
+    @FXML 
     private void handleValidate() {
         SharedData sharedData = SharedData.getInstance();
         String email = sharedData.getEmailT();
@@ -62,7 +62,7 @@ public class PaymentController {
 
     private void openVoyageContentScene() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("voyage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("signup.fxml"));
             Parent root = loader.load();
 
             Scene voyageContentScene = new Scene(root);

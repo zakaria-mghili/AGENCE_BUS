@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import com.example.agence.handelers.sign_up.databaseConn;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,6 +19,13 @@ public class payment {
 
     public void validateAndSubmit(String cardholderName, String cardNumber, String monthExpiration, String yearExpiration, String cvv, int passengers, double montant, String email, Stage primaryStage) {
         // Validate fields
+
+        String emailClient = email; // Assuming this method retrieves the email client value
+
+    if (emailClient == null || emailClient.isEmpty()) {
+        showAlert("Validation Error", "Email client cannot be null or empty.");
+        return;
+    }
         if (cardholderName.isEmpty() || cardNumber.isEmpty() || monthExpiration.isEmpty() || yearExpiration.isEmpty() || cvv.isEmpty()) {
             showAlert("Validation Error", "Please complete all text fields.");
             return;
@@ -30,12 +39,11 @@ public class payment {
         // Database connection and insertion
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gestion_bus", "root", "");
-            String sql = "INSERT INTO payment_details (cardholder_name, passengers, montant) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO reservation (email_client, id_voyage, number_passengers, montant_paye) VALUES (?, 1, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setString(1, cardholderName);
-            statement.setInt(2, passengers);
-            statement.setDouble(3, montant);
-            
+            statement.setString(1, email);
+            statement.setInt(2,passengers);
+            statement.setDouble(3,montant);
             statement.executeUpdate();
             connection.close();
             
@@ -53,7 +61,7 @@ public class payment {
 
     private boolean validateCardDetails(String cardNumber, String expirationMonth, String expirationYear, String cvv) {
         // Example validation logic, replace with your specific requirements
-        if (cardNumber.length() != 16 || !cardNumber.matches("\\d+")) {
+        if (cardNumber.length() != 1 || !cardNumber.matches("\\d+")) {
             return false;
         }
         if (expirationMonth.length() != 2 || !expirationMonth.matches("\\d{2}") || Integer.parseInt(expirationMonth) > 12) {
