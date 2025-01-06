@@ -19,7 +19,10 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class ListeController implements Initializable {
-
+    @FXML
+    private Label monthlist;
+    @FXML
+    private Label daylist;
     @FXML
     private Label notfound;
     @FXML
