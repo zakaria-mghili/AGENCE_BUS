@@ -9,7 +9,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -45,13 +44,18 @@ public class PaymentController {
     @FXML 
     private void handleValidate() {
         SharedData sharedData = SharedData.getInstance();
-        String email = sharedData.getemailT();
-        int passengers = sharedData.getpassengers();
-        double montant = sharedData.getmontant();
+        String emailT = sharedData.getEmailT();
+        int passengers = sharedData.getPassengers();
+        double montant = sharedData.getMontant();
+        String depart = sharedData.getDepartureStation();
+        String arrival = sharedData.getArrivalStation();
+        String departureDate = sharedData.getDepartureDate();
+
+        System.out.println(montant);
 
         payment pay = new payment();
         Stage currentStage = (Stage) validateBtn.getScene().getWindow();
-        pay.validateAndSubmit(cardholderField.getText(), cardnumField.getText(), monthEXP.getText(), yearEXP.getText(), CVV.getText(), passengers, montant, email, currentStage);
+        pay.validateAndSubmit(cardholderField.getText(), cardnumField.getText(), monthEXP.getText(), yearEXP.getText(), CVV.getText(), passengers, montant, emailT, currentStage);
     }
 
     @FXML
@@ -71,15 +75,6 @@ public class PaymentController {
             currentStage.show();
         } catch (IOException e) {
             e.printStackTrace();
-            showAlert("Error", "Unable to load the voyage content scene.");
         }
-    }
-
-    private void showAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
     }
 }

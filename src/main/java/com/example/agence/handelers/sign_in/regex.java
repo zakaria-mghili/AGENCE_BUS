@@ -1,10 +1,10 @@
 package com.example.agence.handelers.sign_in;
 
-import javafx.scene.control.TextField;
-import javafx.scene.control.PasswordField;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 
 

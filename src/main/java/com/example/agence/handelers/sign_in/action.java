@@ -1,12 +1,5 @@
 package com.example.agence.handelers.sign_in;
 
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.PasswordField;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -14,6 +7,14 @@ import javax.swing.JOptionPane;
 
 import com.example.agence.Main;
 import com.example.agence.handelers.sign_up.databaseConn;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class action {
     ResultSet rs = null;

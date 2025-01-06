@@ -1,5 +1,6 @@
 package com.example.agence;
 
+import com.example.agence.handelers.models.SharedData;
 import com.example.agence.handelers.sign_up.singUp_action;
 
 import javafx.fxml.FXML;
@@ -36,6 +37,8 @@ public class SignupController {
     public void initialize() {
         singUp_action ac = new singUp_action();
         signupBtn.setOnAction(event -> {
+            String email = gmailField.getText();
+            SharedData.getInstance().setEmailT(email);
             System.out.println("######################################");
             ac.signUp(name, gmailField, phone, passwordField, event);
             // Get the current stage and close it
