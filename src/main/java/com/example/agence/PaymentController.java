@@ -45,9 +45,9 @@ public class PaymentController {
     @FXML 
     private void handleValidate() {
         SharedData sharedData = SharedData.getInstance();
-        String email = sharedData.getEmailT();
-        int passengers = sharedData.getPassengers();
-        double montant = sharedData.getMontant();
+        String email = sharedData.getemailT();
+        int passengers = sharedData.getpassengers();
+        double montant = sharedData.getmontant();
 
         payment pay = new payment();
         Stage currentStage = (Stage) validateBtn.getScene().getWindow();

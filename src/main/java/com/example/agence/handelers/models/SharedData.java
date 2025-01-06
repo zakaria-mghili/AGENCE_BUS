@@ -18,27 +18,27 @@ public class SharedData {
     }
 
     // Getters and Setters
-    public String getEmailT() {
+    public String getemailT() {
         return emailT;
     }
 
-    public void setEmailT(String emailT) {
+    public void setemailT(String emailT) {
         this.emailT = emailT;
     }
 
-    public int getPassengers() {
+    public int getpassengers() {
         return passengers;
     }
 
-    public void setPassengers(int passengers) {
+    public void setpassengers(int passengers) {
         this.passengers = passengers;
     }
 
-    public double getMontant() {
+    public double getmontant() {
         return montant;
     }
 
-    public void setMontant(double montant) {
+    public void setmontant(double montant) {
         this.montant = montant;
     }
 }
