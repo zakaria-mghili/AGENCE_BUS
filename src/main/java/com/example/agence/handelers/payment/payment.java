@@ -21,15 +21,13 @@ public class payment {
         }
 
         // Database connection and insertion
-        try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gestion_bus", "root", "");
-            String sql = "INSERT INTO reservation (email_client, id_voyage, number_passengers, montant_paye) VALUES (?, 1, ?, ?)";
-            PreparedStatement statement = connection.prepareStatement(sql);
+        String sql = "INSERT INTO reservation (email_client, id_voyage, number_passengers, montant_paye) VALUES (?, 1, ?, ?)";
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gestion_bus", "root", "");
+             PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, emailT);
             statement.setInt(2, passengers);
             statement.setDouble(3, montant);
             statement.executeUpdate();
-            connection.close();
             
             // Show success message
             showAlert("Payment Successful", "Your payment is valid!");

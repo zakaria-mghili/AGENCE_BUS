@@ -66,7 +66,7 @@ public class PaymentController {
 
     private void openVoyageContentScene() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("signup.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("search.fxml"));
             Parent root = loader.load();
 
             Scene voyageContentScene = new Scene(root);
