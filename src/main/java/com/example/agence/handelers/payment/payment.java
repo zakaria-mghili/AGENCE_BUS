@@ -2,7 +2,6 @@ package com.example.agence.handelers.payment;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -32,7 +31,7 @@ public class payment {
             statement.executeUpdate();
             
             // Show success message
-            showAlert("Payment Successful", "Your payment is valid!");
+            //showAlert("Payment Successful", "Your payment is valid!");
             
             // Open new scene for downloading tickets and close current scene
             openDownloadTicketScene(primaryStage);
