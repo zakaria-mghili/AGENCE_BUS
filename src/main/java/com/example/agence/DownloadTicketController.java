@@ -14,7 +14,6 @@ public class DownloadTicketController {
     @FXML
     private Button DownloadBtn;
 
-
     @FXML
     private void initialize() {
         DownloadBtn.setOnAction(e -> handleDownloadButtonAction());
@@ -36,9 +35,4 @@ public class DownloadTicketController {
         }
     }
 
-
-
-
 }
-
-

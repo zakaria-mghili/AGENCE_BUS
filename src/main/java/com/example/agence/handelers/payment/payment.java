@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import com.example.agence.handelers.sign_up.databaseConn;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -22,7 +24,7 @@ public class payment {
 
         // Database connection and insertion
         String sql = "INSERT INTO reservation (email_client, id_voyage, number_passengers, montant_paye) VALUES (?, 1, ?, ?)";
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gestion_bus", "root", "");
+        try (Connection connection = databaseConn.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, emailT);
             statement.setInt(2, passengers);

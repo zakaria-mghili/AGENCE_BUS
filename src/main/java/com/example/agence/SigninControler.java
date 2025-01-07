@@ -37,7 +37,7 @@ public class SigninControler {
         });
         createyours.setOnAction(event -> {
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("hello-view.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("signup.fxml"));
                 Parent root = fxmlLoader.load();
                 Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
                 Scene scene = new Scene(root);

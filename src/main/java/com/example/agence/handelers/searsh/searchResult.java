@@ -42,11 +42,15 @@ public class searchResult {
                 System.out.println(passengers);
                 System.out.println("fff" + passengers + "fff");
                 System.out.println(passengers.isEmpty());
-                query = " SELECT MONTH(date_debut) AS monthD, MONTH(date_arrival) AS monthA, DAY(date_debut) AS dayD, DAY(date_arrival) AS dayA, destination, depart, TIME_FORMAT(date_debut, '%H:%i') AS timeD, TIME_FORMAT(date_arrival, '%H:%i') AS timeA, prix FROM voyage  WHERE depart = ? AND destination = ? AND DATE(date_debut) = ? ";
+                query = "SELECT MONTH(date_debut) AS monthD, MONTH(date_arrival) AS monthA, DAY(date_debut) AS dayD, DAY(date_arrival) AS dayA, destination, depart, FORMAT(date_debut, 'HH:mm') AS timeD, FORMAT(date_arrival, 'HH:mm') AS timeA, prix FROM voyage WHERE depart = ? AND destination = ? AND CAST(date_debut AS DATE) = ? ";
 
                 try (PreparedStatement stmt = databaseConn.getConnection().prepareStatement(query)) {
                     stmt.setString(1, departureStation);
-                    stmt.setString(2, arrivalStation);
+                    if (arrivalStation.trim().equalsIgnoreCase("fes") || arrivalStation.trim().equalsIgnoreCase("fés") || arrivalStation.trim().equalsIgnoreCase("fès")) {
+                        stmt.setString(2, "Fès");
+                    }else{
+                        stmt.setString(2, arrivalStation);
+                    }
                     stmt.setString(3, departureDate.toString());
 
                     ResultSet rs = stmt.executeQuery();
