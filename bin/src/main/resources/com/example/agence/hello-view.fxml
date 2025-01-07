@@ -15,19 +15,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-   prefHeight="600.0" prefWidth="1000.0" styleClass="background"
-   stylesheets="@../../../Styles/style.css" xmlns="http://javafx.com/javafx/23.0.1"
-   xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agence.SigninControler">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="background" stylesheets="@../../../Styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agence.SigninControler">
    <children>
-      <BorderPane layoutX="204.0" layoutY="75.0" prefHeight="200.0" prefWidth="200.0"
-         AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-         AnchorPane.topAnchor="0.0">
+      <BorderPane layoutX="204.0" layoutY="75.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
             <HBox prefHeight="155.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true"
-                     preserveRatio="true">
+                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../Images/GreebLogo.png" />
                      </image>
@@ -42,24 +36,19 @@
             <VBox prefHeight="220.0" prefWidth="220.0" />
          </right>
          <center>
-            <VBox prefHeight="200.0" prefWidth="815.0" styleClass="container"
-               stylesheets="@../../../Styles/style.css" BorderPane.alignment="CENTER">
+            <VBox prefHeight="200.0" prefWidth="815.0" styleClass="container" stylesheets="@../../../Styles/style.css" BorderPane.alignment="CENTER">
                <children>
-                  <HBox prefHeight="50.0" prefWidth="560.0" styleClass="backgroundcreatesign"
-                     stylesheets="@../../../Styles/style.css">
+                  <HBox prefHeight="50.0" prefWidth="560.0" styleClass="backgroundcreatesign" stylesheets="@../../../Styles/style.css">
                      <children>
-                        <VBox prefHeight="50.0" prefWidth="118.0"
-                           stylesheets="@../../../Styles/style.css" HBox.hgrow="ALWAYS" />
-                        <VBox prefHeight="50.0" prefWidth="250.0" styleClass="sign"
-                           stylesheets="@../../../Styles/style.css">
+                        <VBox prefHeight="50.0" prefWidth="118.0" stylesheets="@../../../Styles/style.css" HBox.hgrow="ALWAYS" />
+                        <VBox prefHeight="50.0" prefWidth="250.0" styleClass="sign" stylesheets="@../../../Styles/style.css">
                            <children>
                               <HBox prefHeight="50.0" prefWidth="130.0">
                                  <children>
                                     <VBox prefHeight="71.0" prefWidth="40.0" />
                                     <VBox prefHeight="71.0" prefWidth="43.0">
                                        <children>
-                                          <ImageView fitHeight="35.0" fitWidth="35.0"
-                                             pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../../Images/RedTicket.png" />
                                              </image>
@@ -83,20 +72,16 @@
                                     </VBox>
                                  </children>
                               </HBox>
-                           </children>
-                        </VBox>
-                        <HBox prefHeight="50.0" prefWidth="103.0"
-                           stylesheets="@../../../Styles/style.css" />
-                        <HBox prefHeight="52.0" prefWidth="350.0" styleClass="createacc"
-                           stylesheets="@../../../Styles/style.css">
+                           </children></VBox>
+                        <HBox prefHeight="50.0" prefWidth="103.0" stylesheets="@../../../Styles/style.css" />
+                        <HBox prefHeight="52.0" prefWidth="350.0" styleClass="createacc" stylesheets="@../../../Styles/style.css">
                            <children>
                               <HBox prefHeight="52.0" prefWidth="306.0">
                                  <children>
                                     <VBox prefHeight="52.0" prefWidth="50.0" />
                                     <VBox prefHeight="71.0" prefWidth="43.0">
                                        <children>
-                                          <ImageView fitHeight="35.0" fitWidth="35.0"
-                                             pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../../Images/RedTicket.png" />
                                              </image>
@@ -108,8 +93,7 @@
                                     </VBox>
                                     <VBox prefHeight="71.0" prefWidth="246.0">
                                        <children>
-                                          <Label prefHeight="28.0" prefWidth="238.0"
-                                             text="I create my account" textFill="#1b9476">
+                                          <Label prefHeight="28.0" prefWidth="238.0" text="I create my account" textFill="#1b9476">
                                              <font>
                                                 <Font name="Montserrat-Regular" size="18.0" />
                                              </font>
@@ -121,10 +105,8 @@
                                     </VBox>
                                  </children>
                               </HBox>
-                           </children>
-                        </HBox>
-                        <HBox layoutX="234.0" layoutY="10.0" prefHeight="52.0" prefWidth="110.0"
-                           stylesheets="@../../../Styles/style.css" />
+                           </children></HBox>
+                        <HBox layoutX="234.0" layoutY="10.0" prefHeight="52.0" prefWidth="110.0" stylesheets="@../../../Styles/style.css" />
                      </children>
                   </HBox>
                   <HBox prefHeight="40.0" prefWidth="200.0">
@@ -141,9 +123,7 @@
                   </HBox>
                   <HBox prefHeight="30.0" prefWidth="200.0">
                      <children>
-                        <TextField fx:id="gmailField" prefHeight="54.0" prefWidth="500.0"
-                           promptText="example@domain.xyz"
-                           stylesheets="@../../../Styles/payment.css">
+                        <TextField fx:id="gmailField" prefHeight="54.0" prefWidth="500.0" promptText="example@domain.xyz" stylesheets="@../../../Styles/payment.css">
                            <font>
                               <Font size="22.0" />
                            </font>
@@ -167,8 +147,7 @@
                   </HBox>
                   <HBox prefHeight="30.0" prefWidth="200.0">
                      <children>
-                        <PasswordField fx:id="password" prefHeight="54.0" prefWidth="500.0"
-                           promptText="********" stylesheets="@../../../Styles/payment.css">
+                        <PasswordField fx:id="password" prefHeight="54.0" prefWidth="500.0" promptText="********" stylesheets="@../../../Styles/payment.css">
                            <HBox.margin>
                               <Insets left="28.0" right="25.0" top="8.0" />
                            </HBox.margin>
@@ -181,8 +160,7 @@
                   <HBox prefHeight="16.0" prefWidth="600.0" />
                   <HBox prefHeight="48.0" prefWidth="815.0">
                      <children>
-                        <Button fx:id="signinBtn" mnemonicParsing="false" prefHeight="15.0"
-                           prefWidth="500.0" text="Sign in">
+                        <Button fx:id="signinBtn" mnemonicParsing="false" prefHeight="15.0" prefWidth="500.0" text="Sign in">
                            <font>
                               <Font name="Montserrat-Regular" size="20.0" />
                            </font>
@@ -191,12 +169,10 @@
                            </HBox.margin>
                            <cursor>
                               <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
+                           </cursor></Button>
                      </children>
                   </HBox>
                   <HBox prefHeight="16.0" prefWidth="815.0">
-                           <!-- 
                      <children>
                         <VBox prefHeight="10.0" prefWidth="527.0" />
                         <VBox prefHeight="10.0" prefWidth="241.0">
@@ -206,10 +182,8 @@
                                     <Insets />
                                  </VBox.margin>
                               </Hyperlink>
-                           </children>
-                        </VBox>
+                           </children></VBox>
                      </children>
-                           -->
                   </HBox>
                </children>
             </VBox>

@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 import com.example.agence.Main;
+import com.example.agence.handelers.models.alert;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +18,7 @@ import javafx.stage.Stage;
 
 public class singUp_action {
     static ResultSet result = null;
+    alert alert = new alert();
 
     public static Boolean clientExist(TextField email) throws SQLException {
         String emailT = email.getText();
@@ -73,7 +75,8 @@ public class singUp_action {
                         System.out.println("it is added");
                         System.out.println("########### match");
                     } else {
-                        JOptionPane.showMessageDialog(null, "this email already exist");
+                        // JOptionPane.showMessageDialog(null, "this email already exist");
+                        alert.showAlert("error", "this email already exist");
                     }
                 } catch (SQLException e1) {
                     System.out.println("Erreur SQL !");
@@ -83,19 +86,20 @@ public class singUp_action {
                 if (!regex.isEmail(email)) {
                     // form.getErrorLabel().setText("Invalid email format.");
                     // form.getErrorLabel().setVisible(true);
-                    System.out.println("invalid email");
-                    JOptionPane.showMessageDialog(null, "invalid email");
+                    // JOptionPane.showMessageDialog(null, "invalid email");
+                    alert.showAlert("error", "invalid email");
 
                 } else if (!regex.bigger_8(passwd)) {
                     // form.getErrorLabel().setText("Password must be at least 8 characters.");
                     // form.getErrorLabel().setVisible(true);
-                    System.out.println("invalid password");
-                    JOptionPane.showMessageDialog(null, "invalid password");
+                    // JOptionPane.showMessageDialog(null, "invalid password");
+                    alert.showAlert("error", "Password must be at least 8 characters.");
 
                 } else if (!regex.isNumb(phone)) {
                     // form.getErrorLabel().setText("invalid number phone.");
                     // form.getErrorLabel().setVisible(true);
-                    JOptionPane.showMessageDialog(null, "invalid number phone");
+                    // JOptionPane.showMessageDialog(null, "invalid number phone");
+                    alert.showAlert("error", "invalid number phone");
 
                 } else {
                     // form.getErrorLabel().setVisible(false);
@@ -103,22 +107,9 @@ public class singUp_action {
 
             }
         } else {
-            System.out.println("your input is empty");
-            JOptionPane.showMessageDialog(null, "your input is empty");
+
+            // OptionPane.showMessageDialog(null, "your input is empty");
+            alert.showAlert("error", "your input is empty");
         }
     }
-
-    // to function singup work when click on button
-    // public static void action(JTextField name, JTextField phone, JTextField
-    // email, JPasswordField passwd, JButton singUp, design frame){
-    // singUp.addActionListener(e->{
-    // singUp(name,phone, email,passwd,frame);
-    // });
-
-    /*
-     * public signUp(TextField name,TextField email,TextField phone,PasswordField
-     * passwd){
-     * return sing_up(name, email, phone, passwd);
-     * }
-     */
 }

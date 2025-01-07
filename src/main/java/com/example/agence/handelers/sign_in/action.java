@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 import com.example.agence.Main;
+import com.example.agence.handelers.models.alert;
 import com.example.agence.handelers.sign_up.databaseConn;
 
 import javafx.event.ActionEvent;
@@ -18,6 +19,7 @@ import javafx.stage.Stage;
 
 public class action {
     ResultSet rs = null;
+    alert alert = new alert();
 
     public void sing_in(TextField email, PasswordField passwd, ActionEvent event) {
         String emailT = email.getText();
@@ -32,7 +34,8 @@ public class action {
 
                     // to show if cleint exist
                     if (!rs.next()) {
-                        JOptionPane.showMessageDialog(null, "this email not exist");
+                        //JOptionPane.showMessageDialog(null, "this email not exist");
+                        alert.showAlert("error","this email not exist");
                         return;
                     }
                     // compare hash in database with the new
@@ -53,7 +56,8 @@ public class action {
                             e.printStackTrace();
                         }
                     } else {
-                        JOptionPane.showMessageDialog(null, "password not correct");
+                        //JOptionPane.showMessageDialog(null, "password not correct");
+                        alert.showAlert("error","password not correct");
                     }
                 } catch (SQLException e) {
                     System.out.println("Erreur SQL !");
@@ -63,20 +67,20 @@ public class action {
                 if (!regex.isEmail(email)) {
                     // form.getErrorLabel().setText("Invalid email format.");
                     // form.getErrorLabel().setVisible(true);
-                    JOptionPane.showMessageDialog(null, "invalid email");
-                    System.out.println("invalid email");
+                    //JOptionPane.showMessageDialog(null, "invalid email");
+                    alert.showAlert("error","invalid email");
                 } else if (!regex.bigger_8(passwd)) {
                     // form.getErrorLabel().setText("Password must be at least 8 characters.");
                     // form.getErrorLabel().setVisible(true);
-                    JOptionPane.showMessageDialog(null, "invalid password");
-                    System.out.println("invalid password");
+                   // JOptionPane.showMessageDialog(null, "invalid password");
+                   alert.showAlert("error","Password must be at least 8 characters.");
                 } else {
                     // form.getErrorLabel().setVisible(false);
                 }
             }
         } else {
-            System.out.println("your input is empty");
-            JOptionPane.showMessageDialog(null, "your input is empty");
+            //JOptionPane.showMessageDialog(null, "your input is empty");
+            alert.showAlert("error","your input is empty");
         }
     }
 }

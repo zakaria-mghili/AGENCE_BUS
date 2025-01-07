@@ -12,6 +12,8 @@ import javax.swing.JOptionPane;
 
 import com.example.agence.ListeController;
 import com.example.agence.Main;
+import com.example.agence.handelers.models.alert;
+import com.example.agence.handelers.models.isNumber;
 import com.example.agence.handelers.sign_up.databaseConn;
 
 import javafx.event.ActionEvent;
@@ -25,6 +27,8 @@ import javafx.stage.Stage;
 public class searchResult {
     ResultSet result;
     List<String[]> rlt = new ArrayList<>();
+    alert alert = new alert();
+    isNumber isnumber = new isNumber();
 
     public void search(TextField deparField, TextField arrivalField, DatePicker dateField, TextField passenger,
             ActionEvent event) {
@@ -37,18 +41,19 @@ public class searchResult {
 
         if (!departureStation.trim().isEmpty() && !arrivalStation.trim().isEmpty() && passengers != null
                 && !passengers.isEmpty() && departureDate != null) {
-            if (regex.validcity(arrivalField) && regex.validcity(deparField) && regex.validPassenger(passenger)) {
+            if (isnumber.isNumber(passengers) && regex.validcity(arrivalField) && regex.validcity(deparField) && regex.validPassenger(passenger)) {
 
-                System.out.println(passengers);
-                System.out.println("fff" + passengers + "fff");
-                System.out.println(passengers.isEmpty());
+                int passengerCount = Integer.parseInt(passengers);
+                    System.out.println(passengerCount);
+                    
                 query = "SELECT MONTH(date_debut) AS monthD, MONTH(date_arrival) AS monthA, DAY(date_debut) AS dayD, DAY(date_arrival) AS dayA, destination, depart, FORMAT(date_debut, 'HH:mm') AS timeD, FORMAT(date_arrival, 'HH:mm') AS timeA, prix FROM voyage WHERE depart = ? AND destination = ? AND CAST(date_debut AS DATE) = ? ";
 
                 try (PreparedStatement stmt = databaseConn.getConnection().prepareStatement(query)) {
                     stmt.setString(1, departureStation);
-                    if (arrivalStation.trim().equalsIgnoreCase("fes") || arrivalStation.trim().equalsIgnoreCase("fés") || arrivalStation.trim().equalsIgnoreCase("fès")) {
+                    if (arrivalStation.trim().equalsIgnoreCase("fes") || arrivalStation.trim().equalsIgnoreCase("fés")
+                            || arrivalStation.trim().equalsIgnoreCase("fès")) {
                         stmt.setString(2, "Fès");
-                    }else{
+                    } else {
                         stmt.setString(2, arrivalStation);
                     }
                     stmt.setString(3, departureDate.toString());
@@ -66,9 +71,9 @@ public class searchResult {
                             voy[4] = passenger.getText();
                             voy[5] = rs.getString("prix");
                             voy[6] = rs.getString("dayD");
-                            //voy[7] = rs.getString("dayA");
+                            // voy[7] = rs.getString("dayA");
                             voy[7] = rs.getString("monthD");
-                            //voy[9] = rs.getString("monthA");
+                            // voy[9] = rs.getString("monthA");
 
                             rlt.add(voy);
 
@@ -115,17 +120,23 @@ public class searchResult {
                 }
             } else {
                 if (!regex.validcity(deparField)) {
-                    JOptionPane.showMessageDialog(null, "Departure city not valid");
+                    //JOptionPane.showMessageDialog(null, "Departure city not valid");
+                    alert.showAlert("Error", "Departure city not valid");
                 } else if (!regex.validcity(arrivalField)) {
-                    JOptionPane.showMessageDialog(null, "Arrival city not valid");
+                    //JOptionPane.showMessageDialog(null, "Arrival city not valid");
+                    alert.showAlert("Error", "Arrival city not valid");
                 } else if (!regex.validPassenger(passenger)) {
-                    JOptionPane.showMessageDialog(null,
-                            "Passenger count not valid (The number must be between 1 and 9)");
+                    //JOptionPane.showMessageDialog(null,"Passenger count not valid (The number must be between 1 and 9)");
+                    alert.showAlert("Error", "Passenger count not valid (The number must be between 1 and 9)");
+                }else if (!isnumber.isNumber(passengers)) {
+                    //JOptionPane.showMessageDialog(null, "Passenger count not valid (The number must be between 1 and 9)");
+                    alert.showAlert("Error", "Passenger count not valid (The number must be between 1 and 9)");
                 }
             }
         } else {
             System.out.println("your input is empty");
-            JOptionPane.showMessageDialog(null, "your input is empty");
+            //JOptionPane.showMessageDialog(null, "your input is empty");
+            alert.showAlert("Error", "your input is empty");
         }
     }
 

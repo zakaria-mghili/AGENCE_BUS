@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agence.ListeController">
+    <children>
+        <BorderPane layoutX="212.0" layoutY="87.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <left>
+                <VBox prefHeight="200.0" prefWidth="150.0" stylesheets="@../../../Styles/liste.css" BorderPane.alignment="CENTER">
+                    <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../Images/GreebLogo.png" />
+                            </image>
+                        </ImageView>
+                  <HBox prefHeight="404.0" prefWidth="150.0" />
+                  <VBox prefHeight="85.0" prefWidth="248.0">
+                     <children>
+                        <Button fx:id="cancelsearch" mnemonicParsing="false" prefHeight="28.0" prefWidth="218.0" styleClass="buttonCANCEL1" stylesheets="@../../../Styles/SignUP.css" text="Go back">
+                           <font>
+                              <Font name="Montserrat-Regular" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="20.0" right="20.0" top="30.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                    </children>
+                </VBox>
+            </left>
+            <right>
+                <VBox prefHeight="200.0" prefWidth="150.0" styleClass="transparent" stylesheets="@../../../Styles/liste.css" BorderPane.alignment="CENTER">
+                    <children>
+                        <HBox prefHeight="203.0" prefWidth="250.0" />
+                        <HBox prefHeight="326.0" prefWidth="150.0" VBox.vgrow="ALWAYS" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                    </children>
+                </VBox>
+            </right>
+            <center>
+                <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+
+                    <children>
+                        <HBox prefHeight="122.0" prefWidth="650.0" />
+                        <HBox prefHeight="40.0" prefWidth="650.0">
+                     <children>
+                        <HBox prefHeight="40.0" prefWidth="50.0" />
+                        <HBox prefHeight="40.0" prefWidth="25.0">
+                           <children>
+                              <Label fx:id="daylist" prefHeight="27.0" prefWidth="25.0" text="31" textFill="#1b9476">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="40.0" prefWidth="78.0">
+                           <children>
+                              <Label fx:id="monthlist" prefHeight="27.0" prefWidth="79.0" text="February" textFill="#1b9476">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="40.0" prefWidth="59.0">
+                           <children>
+                              <Label prefHeight="27.0" prefWidth="56.0" text="2025" textFill="#1b9476">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children></HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="transparent" stylesheets="@../../../Styles/liste.css" VBox.vgrow="ALWAYS">
+                            <children>
+                                <ScrollPane prefHeight="570.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../../../Styles/liste.css">
+
+                                    <content>
+
+                                        <GridPane fx:id="grid" prefHeight="0.0" prefWidth="0.0">
+                                            <Label fx:id="notfound" textFill="#1b9476">
+                                                <font>
+                                                    <Font name="Montserrat-Regular" size="16.0" />
+                                                </font>
+                                                <HBox.margin>
+                                                    <Insets left="40.0" top="1.0" />
+                                                </HBox.margin>
+                                            </Label>
+                                 <columnConstraints>
+                                    <ColumnConstraints />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                 </rowConstraints>
+                                        </GridPane>
+                                    </content>
+                                </ScrollPane>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

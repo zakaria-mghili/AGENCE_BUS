@@ -35,18 +35,22 @@ public class SigninControler {
             ac.sing_in(gmailField, password, event);
             SharedData.getInstance().setEmailT(gmailField.getText());
         });
-        createyours.setOnAction(event -> {
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("signup.fxml"));
-                Parent root = fxmlLoader.load();
-                Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-                Scene scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
+        /*
+         * createyours.setOnAction(event -> {
+         * try {
+         * FXMLLoader fxmlLoader = new
+         * FXMLLoader(Main.class.getResource("signup.fxml"));
+         * Parent root = fxmlLoader.load();
+         * Stage stage = (Stage) ((javafx.scene.Node)
+         * event.getSource()).getScene().getWindow();
+         * Scene scene = new Scene(root);
+         * stage.setScene(scene);
+         * stage.show();
+         * } catch (Exception e) {
+         * e.printStackTrace();
+         * }
+         * }
+         * });
+         */
     }
-
 }

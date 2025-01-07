@@ -11,6 +11,12 @@ public class regex {
 
     // Email
     public static Boolean validPassenger(TextField pass) {
+        //String input = "9i";
+        if (pass.getText().matches(NUM_REGEX)) {
+            System.out.println("Valid input");
+        } else {
+            System.out.println("Invalid input");
+        }
         Pattern pattern = Pattern.compile(NUM_REGEX);
 
         Matcher matcher = pattern.matcher(pass.getText().trim());

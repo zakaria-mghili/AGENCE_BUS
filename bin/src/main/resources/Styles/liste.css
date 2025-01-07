@@ -1,0 +1,12 @@
+.sidebar{
+    -fx-background-color: #124660;
+}
+.transparent{
+ -fx-background-color:transparent;
+ -fx-border-color:transparent;
+}
+.container {
+    -fx-background-color: #f2feef;
+    -fx-background-radius: 25;
+    -fx-border-radius:25;
+}
