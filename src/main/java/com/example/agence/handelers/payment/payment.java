@@ -60,11 +60,11 @@ public class payment {
             showAlert("Validation Error", "Invalid month format. Please enter a valid month (01-12).");
             return false;
         }
-        if (!yearExpiration.matches("\\d{4}")) {
-            showAlert("Validation Error", "Invalid year format. Please enter a 4-digit year.");
+        if (!yearExpiration.matches("\\d{4}")|| Integer.parseInt(yearExpiration) < 2025) {
+            showAlert("Validation Error", "Invalid year format. Please enter a 4-digit year.and higher then 2025");
             return false;
         }
-        if (!cvv.matches("\\d{3}")) {
+        if (!cvv.matches("\\d{3}") ) {
             showAlert("Validation Error", "Invalid CVV format. Please enter a 3-digit CVV.");
             return false;
         }
